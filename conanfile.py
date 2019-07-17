@@ -8,12 +8,14 @@ class JsonForModernCppConan(ConanFile):
     settings = "os", "compiler", "arch", "build_type"
     description = "JSON for Modern C++ parser and generator from https://github.com/nlohmann/json"
     license = "MIT"
-    url = "https://github.com/vthiery/conan-jsonformoderncpp"
+    url = "https://github.com/mdurkovic/conan-jsonformoderncpp"
     repo_url = "https://github.com/nlohmann/json"
     author = "Vincent Thiery (vjmthiery@gmail.com)"
+    exports = "arch-indep.diff"
 
     def source(self):
         tools.get("%s/archive/v%s.zip" % (self.repo_url, self.version))
+        tools.patch(base_path="json-%s" % self.version, patch_file="arch-indep.diff")
 
     def build(self):
         cmake = CMake(self)
