@@ -8,7 +8,7 @@ class JsonForModernCppConan(ConanFile):
     settings = "os", "compiler", "arch", "build_type"
     description = "JSON for Modern C++ parser and generator from https://github.com/nlohmann/json"
     license = "MIT"
-    url = "https://github.com/mdurkovic/conan-jsonformoderncpp"
+    url = "https://github.com/midurk/conan-jsonformoderncpp"
     repo_url = "https://github.com/nlohmann/json"
     author = "Vincent Thiery (vjmthiery@gmail.com)"
     exports = "arch-indep.diff"
